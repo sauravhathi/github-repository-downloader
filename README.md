@@ -5,7 +5,9 @@ GitHub Repository Downloader is a convenient and user-friendly tool that allows 
 [https://github.com/sauravhathi/github-repository-downloader](https://sauravhathi.github.io/github-repository-downloader/)
 
 ### Screenshots
+![image](https://user-images.githubusercontent.com/61316762/221985520-12450460-d97d-4a32-97de-7055d3dbd6e5.png)
 
+![image](https://user-images.githubusercontent.com/61316762/221985559-e38bb434-db8a-473f-9a7d-1c42e9f25ccb.png)
 
 ### Getting Started
 
@@ -44,4 +46,4 @@ GitHub Repository Downloader is a convenient and user-friendly tool that allows 
     - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 
 ### License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sauravhathi/github-repository-downloader/blob/main/LICENSE) file for details.
