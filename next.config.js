@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: 'https://api.github.com/repos/:path*',
+      },
+    ]
+  },
 }
 
-module.exports = nextConfig

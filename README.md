@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## GitHub Repository Downloader
+GitHub Repository Downloader is a convenient and user-friendly tool that allows you to easily download entire repositories or specific folders from GitHub as a ZIP file. Whether you're a developer looking to download code for offline use, or simply want to access files that are no longer available online, GitHub Repository Downloader makes it easy to get the files you need.
 
-## Getting Started
+### Demo
+[https://github.com/sauravhathi/github-repository-downloader](https://sauravhathi.github.io/github-repository-downloader/)
 
-First, run the development server:
+### Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Getting Started
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository and install dependencies:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+    ```bash
+    git clone https://github.com/username/repo.git
+    cd repo
+    npm install
+    ```
+2. Start the development server:
+    
+    ```bash
+    npm run dev
+    ```
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Usage
+1. Enter the URL of the GitHub repository or folder you want to download in the input field.
+2. Press Enter or click the "Download" button to start the download.
+3. Wait for the files to be downloaded and zipped. The progress will be displayed in the log area.
+4. Once the download is complete, a ZIP file containing the contents of the repository or folder will be downloaded to your computer.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Features
+ - Download entire repositories or specific folders
+ - User-friendly interface
+ - Progress tracking
+ - ZIP file download
 
-## Learn More
+### Built With
+    - [Next.js](https://nextjs.org/)
+    - [React](https://reactjs.org/)
+    - [SCSS](https://sass-lang.com/)
+    - [GitHub API](https://docs.github.com/en/rest)
+    - [JSZip](https://stuk.github.io/jszip/)
+    - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
