@@ -76,7 +76,7 @@ function App() {
     console.log(user, repo, dir);
 
     setLog('Fetching repo contents...');
-    const zip = await downloadRepositoryContents(`https://api.github.com/repos/${user}/${repo}/contents/${dir}`);
+    const zip = await downloadRepositoryContents(`${user}/${repo}/contents/${dir}`);
 
     if (!zip) {
       setLog('Rate limit exceeded. Try again in a few minutes.');
