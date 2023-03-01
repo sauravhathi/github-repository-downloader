@@ -2,7 +2,7 @@
 GitHub Repository Downloader is a convenient and user-friendly tool that allows you to easily download entire repositories or specific folders from GitHub as a ZIP file. Whether you're a developer looking to download code for offline use, or simply want to access files that are no longer available online, GitHub Repository Downloader makes it easy to get the files you need.
 
 ### Demo
-### [https://github.com/sauravhathi/github-repository-downloader](https://sauravhathi.github.io/github-repository-downloader/)
+### [https://sauravhathi.github.io/github-repository-downloader/](https://sauravhathi.github.io/github-repository-downloader/)
 
 ### Screenshots
 ![image](https://user-images.githubusercontent.com/61316762/221985520-12450460-d97d-4a32-97de-7055d3dbd6e5.png)
