@@ -38,12 +38,12 @@ GitHub Repository Downloader is a convenient and user-friendly tool that allows 
  - ZIP file download
 
 ### Built With
-    - [Next.js](https://nextjs.org/)
-    - [React](https://reactjs.org/)
-    - [SCSS](https://sass-lang.com/)
-    - [GitHub API](https://docs.github.com/en/rest)
-    - [JSZip](https://stuk.github.io/jszip/)
-    - [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [SCSS](https://sass-lang.com/)
+- [GitHub API](https://docs.github.com/en/rest)
+- [JSZip](https://stuk.github.io/jszip/)
+- [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/sauravhathi/github-repository-downloader/blob/main/LICENSE) file for details.
