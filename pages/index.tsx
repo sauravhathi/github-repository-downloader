@@ -9,6 +9,7 @@ function App() {
   const [repoUrl, setRepoUrl] = useState('');
   const [repoFiles, setRepoFiles] = useState<any[]>([]);
   const [log, setLog] = useState('');
+  const [percentCompleted, setPercentCompleted] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileListRef = useRef<HTMLUListElement>(null);
 
@@ -20,10 +21,15 @@ function App() {
   };
 
   // Download file content
-  const downloadFileContent = async (file: { download_url: string; }) => {
+  const downloadFileContent = async (file: { download_url: string }, fileName: string, totalSize: number) => {
     // get file content as blob
     const response = await axios.get(file.download_url, {
       responseType: "blob",
+      onDownloadProgress: (progressEvent) => {
+        const percentCompleted = Math.round((progressEvent.loaded * 100) / totalSize);
+        setLog(`Downloading ${fileName}`);
+        setPercentCompleted(percentCompleted);
+      }
     });
     return response.data;
   };
@@ -34,7 +40,7 @@ function App() {
       if (item.type === "file") {
         // for file, download content and add to zip
         setLog(`Queuing download of ${item.name}`);
-        const fileContent = await downloadFileContent(item);
+        const fileContent = await downloadFileContent(item, item.name, item.size);
         setRepoFiles((prev) => [...prev, item]);
         zip.file(item.name, fileContent);
       } else if (item.type === "dir") {
@@ -76,7 +82,7 @@ function App() {
     console.log(user, repo, dir);
 
     setLog('Fetching repo contents...');
-    const zip = await downloadRepositoryContents(`https://api.github.com/repos/${user}/${repo}/contents/${dir}`);
+    const zip = await downloadRepositoryContents(`${user}/${repo}/contents/${dir}`);
 
     if (!zip) {
       setLog('Rate limit exceeded. Try again in a few minutes.');
@@ -92,7 +98,8 @@ function App() {
     // get list of files so we can show length
     const fileList = zip.file(/.*/);
 
-    setLog(`Downloaded Total ${fileList.length} files\nUser: ${user}\nRepository: ${repoUrl}\nFolder: ${dir}\nSize: ${content.size / 1024 / 1024} MB`);
+    setPercentCompleted(0);
+    setLog(`Downloaded Total ${fileList.length} files\nUser: ${user}\nRepository: ${repoUrl}\nFolder: ${dir}\nSize: ${(content.size / 1024 / 1024).toFixed(2)} MB`);
   };
 
   // Scroll to bottom of file list
@@ -156,9 +163,24 @@ function App() {
               Download
             </button>
           </div>
-          {log && <div className='output'>
-            <pre className="log">{log}</pre>
-          </div>}
+
+          {log && (
+            <div className="output">
+              <pre
+                className="log"
+                aria-label="Log"
+                style={{
+                  background: percentCompleted > 0 ? `linear-gradient(to right, #f0f0f0 ${percentCompleted}%, #fff ${percentCompleted}%)` : undefined,
+                }}
+              >
+                {log}{" "}
+                {percentCompleted > 0 && (
+                  <span style={{ color: "red" }}>{percentCompleted}% Completed</span>
+                )}
+              </pre>
+            </div>
+          )}
+
           {repoFiles.length > 0 && <div className='output'>
             <ul className="files"
               ref={fileListRef}
@@ -168,6 +190,7 @@ function App() {
               ))}
             </ul>
           </div>}
+
           <p style={{ textAlign: "left", marginBottom: 0 }}>
             GitHub Repository Downloader is currently <b>not compatible with Google Chrome</b>. We apologize for any inconvenience this may cause. In the meantime, we recommend using another browser such as <b style={{ color: "red" }}>Firefox or Edge</b> to access our tool and download repositories or folders from GitHub.
           </p>
