@@ -1,5 +1,6 @@
 ## GitHub Repository Downloader
 [![Deploy Next.js site to Pages](https://github.com/sauravhathi/github-repository-downloader/actions/workflows/nextjs.yml/badge.svg)](https://github.com/sauravhathi/github-repository-downloader/actions/workflows/nextjs.yml)
+
 GitHub Repository Downloader is a convenient and user-friendly tool that allows you to easily download entire repositories or specific folders from GitHub as a ZIP file. Whether you're a developer looking to download code for offline use, or simply want to access files that are no longer available online, GitHub Repository Downloader makes it easy to get the files you need.
 
 ### Demo
