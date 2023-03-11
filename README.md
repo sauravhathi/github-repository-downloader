@@ -16,7 +16,7 @@ GitHub Repository Downloader is a convenient and user-friendly tool that allows 
 1. Clone the repository and install dependencies:
 
     ```bash
-    git clone https://github.com/username/repo.git
+    git clone https://github.com/sauravhathi/github-repository-downloader
     cd repo
     npm install
     ```
