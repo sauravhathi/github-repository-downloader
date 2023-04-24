@@ -108,12 +108,22 @@ body{
       }
     }
   }
-}
 
-@media (max-width: 600px){
-  .App{
+  @media (max-width: 800px){
+    main{
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 600px){
     main{
       padding: 10px;
+    }
+  }
+
+  @media (max-width: 400px){
+    main{
+      padding: 5px;
     }
   }
 }
